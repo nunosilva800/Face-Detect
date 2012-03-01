@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="6e383af0-94bd-409b-be96-e4bc523623d4" name="FaceRecogOverview" linkedPackageId="36cf21c6-b45a-4776-9b56-257af72d35e4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="3f5446a4-9d98-4690-9fc7-56819ae8a7aa">
+      <elementDefinition Id="e40b618a-fe55-407f-9f75-234e08a4421e" />
+      <body>Call stack representation for when a user wants to add new face</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="5e635d30-f4fc-4a28-86b4-65fa7de3562a" name="FaceRecogOverview" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="ce5a2676-1ffd-4a75-b283-306f9a603b3a" />
+        <nodes>
+          <initialNode Id="442f226a-69d1-4784-a9de-739fa3370c6e" name="Initial1" isLeaf="false">
+            <elementDefinition Id="fa019f9c-a137-4ae2-8205-53c9c79c0546" />
+            <flowNodeTargets>
+              <controlFlow Id="0ef6c050-3c0d-4cb9-ac45-5ae820b7d25d" isLeaf="false">
+                <opaqueActionMoniker Id="4ff1f502-fdd5-471a-ba0c-aaefa26ea94e" LastKnownName="loadTrainingData()" />
+                <elementDefinition Id="e517a786-490c-42f8-8882-79bad48559c2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="4ff1f502-fdd5-471a-ba0c-aaefa26ea94e" name="loadTrainingData()" isLeaf="false">
+            <elementDefinition Id="edfaa21b-9b44-40ca-a75a-75c059306cd9" />
+            <flowNodeTargets>
+              <controlFlow Id="3f38b87b-90d5-41b7-9336-a0d545e0600c" isLeaf="false">
+                <opaqueActionMoniker Id="d9eef7b4-9ff3-4019-a143-c16a7896d694" LastKnownName="Detect face" />
+                <elementDefinition Id="1aede12b-b001-4c59-bb22-ce6918c4975a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="d9eef7b4-9ff3-4019-a143-c16a7896d694" name="Detect face" isLeaf="false">
+            <elementDefinition Id="0faddf9d-c160-4823-8df3-6adb9eed546c" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="5f2fb930-528d-4508-97b2-5a6c2d522d67" name="[Detected Faces]" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="8c94d34e-7bd6-4995-82cc-aba717980a1c" />
+                  <objectFlowTargets>
+                    <objectFlow Id="a684aaf5-9a31-41c0-838c-43678e56c9c0" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="4a49abaa-cb41-47d2-97d0-d73149ba8f2a" LastKnownName="cvEigenDecomposite()" />
+                      <elementDefinition Id="0d14d79a-d488-471a-b5b3-147e69e25620" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="d9d9c578-ed54-486f-b08d-79b142c537bc" name="2147483647" value="2147483647">
+                      <elementDefinition Id="702a5895-c729-4cac-bb23-f0958f57e53d" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="e45417de-caae-4aa7-aa5e-d428c92d92ac" name="while[1]" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="36c0dc29-3326-4a67-a164-7effaf57d538" />
+                  <objectFlowTargets>
+                    <objectFlow Id="bbaefa34-8252-41f7-ab00-40a6c4e19a39" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="d9eef7b4-9ff3-4019-a143-c16a7896d694" LastKnownName="Detect face" />
+                      <elementDefinition Id="e77da39c-35a5-471f-97a5-9070a15aa417" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="b90d217d-3fb2-423f-91a9-98bda00e058d" name="2147483647" value="2147483647">
+                      <elementDefinition Id="8a18c3f8-fc5e-44e9-9ab2-f09a6887c6c3" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="ecebaed1-685b-4947-a6e9-5174b8357f29" name="[new face]" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="b21dd8d5-3725-467e-897d-8cda0f8003e7" />
+                  <objectFlowTargets>
+                    <objectFlow Id="25cbacfb-6e8d-41b2-9c74-7f496f42975f" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="a548009d-264c-4769-950d-9438a32902c9" LastKnownName="Store several images" />
+                      <elementDefinition Id="4199b30b-03e8-4fde-9d48-995ca5038bee" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="8f6c9394-3854-43a1-bfec-4fed263232a1" name="2147483647" value="2147483647">
+                      <elementDefinition Id="8ef4a2bc-b5a3-473a-bb3c-5047dc3702cd" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="4a49abaa-cb41-47d2-97d0-d73149ba8f2a" name="cvEigenDecomposite()" isLeaf="false">
+            <elementDefinition Id="b9b4df3e-165f-4297-b5c2-1ebdd6c6aa20" />
+            <flowNodeTargets>
+              <controlFlow Id="45ed9977-58d4-4283-8995-a09a94e02a61" isLeaf="false">
+                <opaqueActionMoniker Id="53f90995-48f7-4f1a-857d-8732dd5a23ee" LastKnownName="findNearestNeighbor()" />
+                <elementDefinition Id="766ba575-3acd-4458-93f7-0f293150b4c5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="53f90995-48f7-4f1a-857d-8732dd5a23ee" name="findNearestNeighbor()" isLeaf="false">
+            <elementDefinition Id="46e8da87-9cca-4c9f-9766-a89edfa4db7c" />
+            <flowNodeTargets>
+              <controlFlow Id="b53a7d4b-4c67-40c5-bedb-84657a1c3365" isLeaf="false">
+                <opaqueActionMoniker Id="d9eef7b4-9ff3-4019-a143-c16a7896d694" LastKnownName="Detect face" />
+                <elementDefinition Id="b73ae5a6-f090-41e0-af39-0cf663b0e5f8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a548009d-264c-4769-950d-9438a32902c9" name="Store several images" isLeaf="false">
+            <elementDefinition Id="4501e941-597f-429e-a0ee-cad2f4295c2b" />
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="a1bc33c5-d2e1-42ca-9eb0-d6eae02d70a1" name="[enough images colected]" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="46aa1137-3871-4d6a-a4a0-26d2d3aa8594" />
+                  <objectFlowTargets>
+                    <objectFlow Id="f90187f3-6cc9-4b64-993b-fef82496abfd" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="d50fc428-2e9d-4635-9710-4d4d221396f6" LastKnownName="retrainOnLine()" />
+                      <elementDefinition Id="ac8ce17c-c214-4e45-a569-18a537d8bea5" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="52c17eed-836e-4599-8958-6305ceb14a59" name="2147483647" value="2147483647">
+                      <elementDefinition Id="129f9dff-8e06-48c7-894a-921c3fd5ee36" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="d50fc428-2e9d-4635-9710-4d4d221396f6" name="retrainOnLine()" isLeaf="false">
+            <elementDefinition Id="901d1be7-2be2-4bb1-97f4-caad8a59b778" />
+            <flowNodeTargets>
+              <controlFlow Id="a6f25e05-6642-4b00-a9b1-d60a4669af3c" isLeaf="false">
+                <opaqueActionMoniker Id="5524a22b-98ed-43e2-b81b-3b8b5ded3c76" LastKnownName="learn()" />
+                <elementDefinition Id="1134de2e-49b7-446b-b783-eb9faeabbdab" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5524a22b-98ed-43e2-b81b-3b8b5ded3c76" name="learn()" isLeaf="false">
+            <elementDefinition Id="1da49a04-06c5-4b61-bb8a-4229aa9d6057" />
+            <flowNodeTargets>
+              <controlFlow Id="55767951-105f-4060-ba4b-fe8405e0f065" isLeaf="false">
+                <opaqueActionMoniker Id="9a85bc42-910d-4d2a-a228-9fcbd977e81f" LastKnownName="loadFaceImgArray()" />
+                <elementDefinition Id="85dd10b7-268d-4e29-b81f-4a3b0a5bbeca" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9a85bc42-910d-4d2a-a228-9fcbd977e81f" name="loadFaceImgArray()" isLeaf="false">
+            <elementDefinition Id="0997ccba-b581-4d60-93ab-0a4ee3ab36d3" />
+            <flowNodeTargets>
+              <controlFlow Id="c161c89c-2edd-440d-b1bc-da0ad4f45664" isLeaf="false">
+                <opaqueActionMoniker Id="fdd7cb43-77a8-4d7b-8846-351f8bcaa9c8" LastKnownName="doPCA()" />
+                <elementDefinition Id="b77ff538-e417-4736-85af-7230bd507e94" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fdd7cb43-77a8-4d7b-8846-351f8bcaa9c8" name="doPCA()" isLeaf="false">
+            <elementDefinition Id="33fb6a68-3f63-45ca-b397-4088f7758699" />
+            <flowNodeTargets>
+              <controlFlow Id="1887a440-bf9e-430c-b247-a01f3f7cab84" isLeaf="false">
+                <opaqueActionMoniker Id="f6a8a4bc-6dc2-49a8-980c-9e6a1e904825" LastKnownName="cvCalcEigenObjects()" />
+                <elementDefinition Id="ee0928e2-8d98-4f6d-b8df-b77399a64cd9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="58aa9c46-59a7-4b9e-a4e6-2f78b682ac68" name="storeTrainingData()" isLeaf="false">
+            <elementDefinition Id="4f86dcff-438c-490a-8491-5660bb591912" />
+            <flowNodeTargets>
+              <controlFlow Id="d616963e-b8e4-4dd6-8cff-2ea08b951b8d" isLeaf="false">
+                <opaqueActionMoniker Id="4ff1f502-fdd5-471a-ba0c-aaefa26ea94e" LastKnownName="loadTrainingData()" />
+                <elementDefinition Id="329361eb-dd62-4bdb-ab0e-53b978a456b6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f6a8a4bc-6dc2-49a8-980c-9e6a1e904825" name="cvCalcEigenObjects()" isLeaf="false">
+            <elementDefinition Id="a333f019-0d33-445c-8c26-db3b668c497b" />
+            <flowNodeTargets>
+              <controlFlow Id="4ca076c7-2a1c-471b-a3dd-407722cb8f04" isLeaf="false">
+                <opaqueActionMoniker Id="de6b4bf3-d3b8-4aaf-9b65-3333a6176737" LastKnownName="cvEigenDecomposite()" />
+                <elementDefinition Id="d3d3b45d-363c-41d7-96ff-40f050307740" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="de6b4bf3-d3b8-4aaf-9b65-3333a6176737" name="cvEigenDecomposite()" isLeaf="false">
+            <elementDefinition Id="2ba52146-6ac5-4459-a327-ced954363d0d" />
+            <flowNodeTargets>
+              <controlFlow Id="1d8ae61e-4a54-4abd-8982-ec23def5497c" isLeaf="false">
+                <opaqueActionMoniker Id="58aa9c46-59a7-4b9e-a4e6-2f78b682ac68" LastKnownName="storeTrainingData()" />
+                <elementDefinition Id="16e5dfa8-d14b-4045-806b-be024ba4e483" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="36cf21c6-b45a-4776-9b56-257af72d35e4" name="ModelingProject1">
+    <elementDefinition Id="e6af3a3e-4678-483e-a341-e3a367add3b8" />
+    <profileInstances>
+      <packageHasProfileInstances Id="8ae56747-6c8e-4a73-b615-357d96e35593">
+        <profileInstance Id="1472115f-7235-4d2d-b75f-0dc1dbc2b365" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="39c71d60-9972-401f-8c81-5c97473d667d">
+        <profileInstance Id="67ac81c9-1b6d-422b-8a8f-2835a3bd2c0a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

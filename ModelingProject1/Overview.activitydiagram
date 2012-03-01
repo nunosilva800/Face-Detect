@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bb7a5028-1e57-4cc5-9436-8050e12bfacd" name="Overview" linkedPackageId="2f60e780-5bfc-4fd6-a388-557d8bb468cb" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="886fee5c-1cd7-4430-a6bf-72881cc5103f" name="Overview" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="7d2b8d6b-3774-4b5d-9faa-f02ee59cd914" />
+        <nodes>
+          <initialNode Id="cafb4a49-4c30-4c7f-928d-d65c344e66fd" name="Initial1" isLeaf="false">
+            <elementDefinition Id="da8abd98-e796-45b5-a95c-448f4aff8d44" />
+            <flowNodeTargets>
+              <controlFlow Id="b906b07e-41cf-4257-aa68-598ba274d94e" isLeaf="false">
+                <opaqueActionMoniker Id="61c6bbdd-11a7-49e2-b9d0-5dc50357df73" LastKnownName="Ler base de dados:&#xD;&#xA; * pessoas&#xD;&#xA; * máscaras" />
+                <elementDefinition Id="56bd9f64-a336-42cc-90d9-2ae5293d83db" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="61c6bbdd-11a7-49e2-b9d0-5dc50357df73" name="Ler base de dados:&#xD;&#xA; * pessoas&#xD;&#xA; * máscaras" isLeaf="false">
+            <elementDefinition Id="1f280c3a-d5f1-4588-a7bd-9c9a0398357a" />
+            <flowNodeTargets>
+              <controlFlow Id="9ad1ae2a-88b0-436f-a72d-fefce208d77d" isLeaf="false">
+                <opaqueActionMoniker Id="5c02281b-e84e-414c-85f7-2b7175d655aa" LastKnownName="Capturar da câmara" />
+                <elementDefinition Id="e7347e1a-3b58-4b90-a538-51de80802dd9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5c02281b-e84e-414c-85f7-2b7175d655aa" name="Capturar da câmara" isLeaf="false">
+            <elementDefinition Id="239c4fde-0e75-41fe-91af-3d953c58a325" />
+            <flowNodeTargets>
+              <controlFlow Id="1caacd19-80d0-4121-9918-74485fecf05a" isLeaf="false">
+                <opaqueActionMoniker Id="bb2aae35-5fc3-4977-b0f1-7e66bf6c8dea" LastKnownName="Detectar face" />
+                <elementDefinition Id="c0c6588f-1b49-4153-bd49-3c2f5fdca12b" />
+              </controlFlow>
+              <controlFlow Id="849b433a-e194-455a-83a0-ddd5e43b68e6" isLeaf="false">
+                <opaqueActionMoniker Id="821c2318-06b3-454e-83f9-98eee5763706" LastKnownName="Actualizar modelo do fundo" />
+                <elementDefinition Id="a48e329b-08c5-4b1f-9947-e94a4c2ca8e6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="bb2aae35-5fc3-4977-b0f1-7e66bf6c8dea" name="Detectar face" isLeaf="false">
+            <elementDefinition Id="0dbb20bd-08f6-43f0-8a6a-05f208171fac" />
+            <objectFlowTargets>
+              <objectFlow Id="4f045bf3-f503-45f9-9af8-7c26ca3f8a19" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="4aef72c9-acba-4e26-85df-8a9d8bdcdf9b" LastKnownName="Imagens da face" />
+                <elementDefinition Id="7f1349c9-36b7-4e40-8b19-1c68dc1848eb" />
+              </objectFlow>
+            </objectFlowTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="b88d03ef-78bb-421b-b6f3-0e827e8e0e9d" name="Face detectada" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="3314a359-9cc1-44e9-99e6-9859f8cfa94e" />
+                  <objectFlowTargets>
+                    <objectFlow Id="8085fa9d-8b8f-42ab-bc7f-b7c4fd03197d" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="320186e7-29e1-4ca4-8ba3-e7e1e83827a2" LastKnownName="Pré-Processamento" />
+                      <elementDefinition Id="b689559c-c0e8-4039-8f36-486bc3b19ff7" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="0657a17e-8509-4c78-8035-71f486075e5c" name="2147483647" value="2147483647">
+                      <elementDefinition Id="ccae1224-4d2a-47a2-8007-68d7ecdb70c5" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin Id="4fa986e9-1b32-464a-95a4-8ceff2c21d3b" name="Não detectada" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="a8e38ba7-671f-4659-88ac-62b1437c8030" />
+                  <objectFlowTargets>
+                    <objectFlow Id="5fe39f87-cf6c-4486-9ef7-eef0e48a2ce7" isLeaf="false" isMulticast="false" isMultireceive="false">
+                      <opaqueActionMoniker Id="98f64ed7-e840-4b1f-b1ed-7a4d2d982a01" LastKnownName="Substituir Fundo" />
+                      <elementDefinition Id="cb07fb5e-679d-406d-b493-cb9c7606b27a" />
+                    </objectFlow>
+                  </objectFlowTargets>
+                  <upperBound>
+                    <literalInteger Id="56f8a71a-6a3a-48e9-84f0-605a545a3a7a" name="2147483647" value="2147483647">
+                      <elementDefinition Id="66a9b69b-f6c9-4be6-993a-f10e1127a97e" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="8bcf78d5-944b-48bc-929d-5e98631272eb" name="Reconhecer" isLeaf="false">
+            <elementDefinition Id="1532186f-b51a-47a7-8734-bf539344fd0f" />
+            <flowNodeTargets>
+              <controlFlow Id="0586fe52-8349-47a0-ae42-11672f553b6d" isLeaf="false">
+                <opaqueActionMoniker Id="4d3c3a9d-5d35-4aff-a39a-2767ffa44648" LastKnownName="Aplicar Máscara" />
+                <elementDefinition Id="93a8fc16-e4d0-4cfa-b7a4-3904ccbf1c3f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4d3c3a9d-5d35-4aff-a39a-2767ffa44648" name="Aplicar Máscara" isLeaf="false">
+            <elementDefinition Id="4e06f1bb-4f93-4e51-8f9a-4ad89094da80" />
+            <flowNodeTargets>
+              <controlFlow Id="b1dff93c-9083-4574-b292-dd885c5b348d" isLeaf="false">
+                <opaqueActionMoniker Id="98f64ed7-e840-4b1f-b1ed-7a4d2d982a01" LastKnownName="Substituir Fundo" />
+                <elementDefinition Id="e649d880-8788-41ae-8c88-458ed04b0f7f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="cd938b84-83df-475f-a626-43844f84a966" name="Capturar imagens da face" isLeaf="false">
+            <elementDefinition Id="5a09b233-c621-4855-b745-8af566193472" />
+            <flowNodeTargets>
+              <controlFlow Id="c39f50bb-b862-48f0-9d99-e9e53767b37b" isLeaf="false">
+                <opaqueActionMoniker Id="684f30a8-f115-4fef-a2a3-2e674f403d26" LastKnownName="Adicionar à base de dados" />
+                <elementDefinition Id="ef91316d-4ccd-44aa-9af3-9e6291490b6a" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="5dea0f2a-97c0-4442-8e6a-5f543b2c04de" name="Nome" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="1e35aaf2-fd8b-4393-8607-47107f0bb3ca" />
+                  <upperBound>
+                    <literalInteger Id="bd5e367c-1a11-4695-a987-df6eea763150" name="2147483647" value="2147483647">
+                      <elementDefinition Id="bfd53d3b-2f48-4fdb-8a5a-aae144ce3335" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+              <opaqueActionHasInputValues>
+                <inputPin Id="4aef72c9-acba-4e26-85df-8a9d8bdcdf9b" name="Imagens da face" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="3be3c418-39a4-477f-88ea-4001aab9d7ac" />
+                  <upperBound>
+                    <literalInteger Id="2f068865-d547-42da-b568-7ae3f64d655c" name="2147483647" value="2147483647">
+                      <elementDefinition Id="1b0e4c4c-9f03-4cd5-8968-7e9ae15f5709" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <acceptEventAction Id="feefa8f8-f7d8-4f92-b76f-9ccae26cc6a5" name="Adicionar nova face" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="8b13a222-f181-4cf7-acf8-e56f55cffbc9" />
+            <objectFlowTargets>
+              <objectFlow Id="2767b7a1-2423-451e-afb4-9e523275ebae" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="5dea0f2a-97c0-4442-8e6a-5f543b2c04de" LastKnownName="Nome" />
+                <elementDefinition Id="4a6e81ce-771c-466e-a8e2-7b856bee9f7e" />
+              </objectFlow>
+            </objectFlowTargets>
+          </acceptEventAction>
+          <opaqueAction Id="684f30a8-f115-4fef-a2a3-2e674f403d26" name="Adicionar à base de dados" isLeaf="false">
+            <elementDefinition Id="96926b83-0ee6-47b6-a3c0-adab0e55108f" />
+            <flowNodeTargets>
+              <controlFlow Id="f5290fef-fd5f-45a0-a25d-98ac280ee8eb" isLeaf="false">
+                <opaqueActionMoniker Id="61c6bbdd-11a7-49e2-b9d0-5dc50357df73" LastKnownName="Ler base de dados:&#xD;&#xA; * pessoas&#xD;&#xA; * máscaras" />
+                <elementDefinition Id="51e3de03-e0e5-498f-b857-4f74ac30faf8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="821c2318-06b3-454e-83f9-98eee5763706" name="Actualizar modelo do fundo" isLeaf="false">
+            <elementDefinition Id="65835036-803d-4825-865f-ef8af1383916" />
+          </opaqueAction>
+          <opaqueAction Id="98f64ed7-e840-4b1f-b1ed-7a4d2d982a01" name="Substituir Fundo" isLeaf="false">
+            <elementDefinition Id="7b5889b5-7ca1-48bf-a46a-69699709cd5c" />
+            <flowNodeTargets>
+              <controlFlow Id="625778ab-30d8-4f4c-ad71-56424fcbadf8" isLeaf="false">
+                <opaqueActionMoniker Id="e86cd8ea-904b-4714-a9f2-8a417e65da15" LastKnownName="Mostrar imagem" />
+                <elementDefinition Id="40178972-0de5-4d25-9e4a-6b6b2e53a078" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="320186e7-29e1-4ca4-8ba3-e7e1e83827a2" name="Pré-Processamento" isLeaf="false">
+            <elementDefinition Id="ff7d15c9-848a-447f-bb86-079f0ee02158" />
+            <flowNodeTargets>
+              <controlFlow Id="ab5bc7ff-6e07-4693-9b4d-81f3976c7877" isLeaf="false">
+                <opaqueActionMoniker Id="8bcf78d5-944b-48bc-929d-5e98631272eb" LastKnownName="Reconhecer" />
+                <elementDefinition Id="e87028a5-84cd-4747-8b2c-8d5252246ecc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e86cd8ea-904b-4714-a9f2-8a417e65da15" name="Mostrar imagem" isLeaf="false">
+            <elementDefinition Id="bc8ca944-fee0-4ebf-a5d6-d95c24af210f" />
+            <flowNodeTargets>
+              <controlFlow Id="a713ce98-00b8-479e-9c8f-d95525218773" isLeaf="false">
+                <opaqueActionMoniker Id="5c02281b-e84e-414c-85f7-2b7175d655aa" LastKnownName="Capturar da câmara" />
+                <elementDefinition Id="a585a116-0801-4d79-97ea-ce511a7add7b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="2f60e780-5bfc-4fd6-a388-557d8bb468cb" name="ModelingProject1">
+    <elementDefinition Id="e6af3a3e-4678-483e-a341-e3a367add3b8" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5f78ed7b-cf69-453a-91c0-b7c2d0cf2a84">
+        <profileInstance Id="a73c3b2e-8504-4dc2-8490-0e8c4a9e37bb" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5dd6669f-7eee-4395-ad07-d5eecc2043f5">
+        <profileInstance Id="418af639-5cdf-45d1-8085-7724d0eb99fc" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>
